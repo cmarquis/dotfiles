@@ -30,3 +30,12 @@ alias s="rspec"
 
 # Include custom aliases
 [[ -f ~/.aliases.local ]] && source ~/.aliases.local
+
+
+# tmux
+# open session with current folder name
+alias tmc="tmux new -s \$(basename \$(pwd))"
+# attach to session named after the currnet folder
+alias tma="tmux attach-session -t \$(basename \$(pwd))"
+# list tmux sessions
+alias tml="tmux list-sessions"

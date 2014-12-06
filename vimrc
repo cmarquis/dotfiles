@@ -129,7 +129,7 @@ nnoremap <Down> :echoe "Use j"<CR>
 nnoremap <Leader>t :call RunCurrentSpecFile()<CR>
 nnoremap <Leader>s :call RunNearestSpec()<CR>
 nnoremap <Leader>l :call RunLastSpec()<CR>
-let g:rspec_command = 'call Send_to_Tmux("spring rspec {spec}\n")'
+let g:rspec_command = 'call Send_to_Tmux("rspec {spec}\n")'
 
 " Run commands that require an interactive shell
 nnoremap <Leader>r :RunInInteractiveShell<space>

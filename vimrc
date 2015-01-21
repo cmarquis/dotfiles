@@ -59,6 +59,9 @@ augroup vimrcEx
 
   " Allow stylesheets to autocomplete hyphenated words
   autocmd FileType css,scss,sass setlocal iskeyword+=-
+
+  autocmd FileType coffee,slim,haml set cursorcolumn
+
 augroup END
 
 " Softtabs, 2 spaces

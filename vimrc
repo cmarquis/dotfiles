@@ -60,7 +60,9 @@ augroup vimrcEx
   " Allow stylesheets to autocomplete hyphenated words
   autocmd FileType css,scss,sass setlocal iskeyword+=-
 
-  autocmd FileType coffee,slim,haml set cursorcolumn
+  autocmd FileType coffee,slim,haml,python set cursorcolumn
+  autocmd FileType python set foldmethod=indent
+  autocmd FileType python set foldnestmax=2
 
 augroup END
 

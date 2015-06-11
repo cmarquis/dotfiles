@@ -33,6 +33,7 @@ Plugin 'vim-scripts/tComment'
 Plugin 'jgdavey/tslime.vim'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'pangloss/vim-javascript'
 
 if filereadable(expand("~/.vimrc.bundles.local"))
   source ~/.vimrc.bundles.local

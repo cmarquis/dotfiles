@@ -18,6 +18,8 @@
   pr = !gh pull-request
   st = status
   up = !git fetch origin && git rebase origin/master
+  llog = git log --pretty=oneline
+  irb = rebase -i
 [core]
   excludesfile = ~/.gitignore
   autocrlf = input

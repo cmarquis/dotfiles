@@ -69,6 +69,7 @@ augroup vimrcEx
   autocmd FileType python set foldmethod=indent
   autocmd FileType python set foldnestmax=2
   au FileType python set sw=4 sts=4 et
+  au FileType coffee set sw=4 sts=4 et
 
 augroup END
 

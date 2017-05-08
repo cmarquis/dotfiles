@@ -6,6 +6,7 @@
   ui = auto
 [alias]
   aa = add --all
+  ai = add -i
   ap = add --patch
   ca = commit --amend
   ci = commit -v
@@ -24,7 +25,6 @@
   excludesfile = ~/.gitignore
   autocrlf = input
 [merge]
-  ff = only
 [commit]
   template = ~/.gitmessage
 [fetch]
@@ -40,3 +40,7 @@
 [mergetool "sourcetree"]
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true

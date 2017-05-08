@@ -1,0 +1,13 @@
+function rtest() {
+  if (( $# == 0 )) then;
+    echo "No test specified."
+    echo "Usage: rtest testfile.rb [testname]"
+    exit 1
+  else
+    if (( $# == 1 )); then
+      ruby -I "lib:test" $1
+    else
+      ruby -I "lib:test" $1 -n /.*$2.*/
+    fi
+  fi
+}

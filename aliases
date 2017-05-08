@@ -13,6 +13,9 @@ alias -g ONE="| awk '{ print \$1}'"
 alias e="$EDITOR"
 alias v="$VISUAL"
 
+alias phx="mix phoenix.server"
+alias mixsh "iex -S mix"
+
 # git
 alias gci="git pull --rebase && rake && git push"
 

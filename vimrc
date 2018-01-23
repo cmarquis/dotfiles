@@ -119,9 +119,6 @@ endfunction
 inoremap <S-Tab> <c-r>=InsertTabWrapper()<cr>
 " inoremap <S-Tab> <c-n>
 
-" Exclude Javascript files in :Rtags via rails.vim due to warnings when parsing
-let g:Tlist_Ctags_Cmd="ctags --exclude='*.js'"
-
 " Index ctags from any project, including those outside Rails
 map <Leader>ct :!ctags -R .<CR>
 
@@ -158,8 +155,13 @@ nnoremap <C-l> <C-w>l
 
 " configure syntastic syntax checking to check on open as well as save
 let g:syntastic_check_on_open=1
-let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-"]
 let syntastic_mode_map = { 'passive_filetypes': ['html'] }
+
+let g:indent_guides_enable_on_vim_startup = 0
+
+" let g:vim_jsx_pretty_enable_jsx_highlight = 1
+" let g:vim_jsx_pretty_colorful_config = 1
+let g:jsx_ext_required = 0
 
 
 " Set spellfile to location that is guaranteed to exist, can be symlinked to
@@ -169,9 +171,9 @@ set spellfile=$HOME/.vim-spell-en.utf-8.add
 " Always use vertical diffs
 set diffopt+=vertical
 
+
 " Local config
 if filereadable($HOME . "/.vimrc.local")
   source ~/.vimrc.local
 endif
 
-let g:indent_guides_enable_on_vim_startup = 0

@@ -1,13 +1,3 @@
-# modify the prompt to contain git branch name if applicable
-git_prompt_info() {
-  ref=$(git symbolic-ref HEAD 2> /dev/null)
-  if [[ -n $ref ]]; then
-    echo " %{$fg_bold[green]%}${ref#refs/heads/}%{$reset_color%}"
-  fi
-}
-setopt promptsubst
-export PS1='${SSH_CONNECTION+"%{$fg_bold[green]%}%n@%m:"}%{$fg_bold[blue]%}%c%{$reset_color%}$(git_prompt_info) %# '
-
 # load our own completion functions
 fpath=(~/.zsh/completion $fpath)
 
@@ -96,27 +86,21 @@ _load_settings() {
 }
 _load_settings "$HOME/.zsh/configs"
 
+export ZSH=~/.oh-my-zsh
+
+[[ ! -f ~/.oh-my-zsh/oh-my-zsh.sh ]] && sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+ZSH_THEME="robbyrussell"
+plugins=(
+    docker
+    git
+)
+
+source $ZSH/oh-my-zsh.sh
+
+
 # Local config
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 
 
 
-export NVM_DIR="/Users/joebellus/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
-
-
-
-function preexec() {
-  timer=${timer:-$SECONDS}
-}
-
-function precmd() {
-  if [ $timer ]; then
-    timer_show=$(($SECONDS - $timer))
-    export RPROMPT="%F{cyan}${timer_show}s %{$reset_color%}"
-    unset timer
-  fi
-}

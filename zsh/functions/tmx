@@ -1,0 +1,5 @@
+# tmuxinator start 
+
+function tmx() {
+  tmuxinator start "$1";
+}

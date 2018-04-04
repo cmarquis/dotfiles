@@ -11,34 +11,12 @@ Install neovim:
     
     brew install neovim
 
-Install
--------
+NOTE: For git account information you'll likely want a .gitconfig.local file in
+your home directory. It should contain the following:
 
-Clone onto your laptop:
-
-    git clone git://github.com/viaov/dotfiles.git
-
-Install [rcm](https://github.com/thoughtbot/rcm):
-
-    brew tap thoughtbot/formulae
-    brew install rcm
-
-Install the dotfiles:
-
-    env RCRC=$HOME/dotfiles/rcrc rcup
-
-This command will create symlinks for config files in your home directory.
-Setting the `RCRC` environment variable tells `rcup` to use standard
-configuration options:
-
-* Exclude the `README.md` and `LICENSE` files, which are part of
-  the `dotfiles` repository but do not need to be symlinked in.
-* Give precedence to personal overrides which by default are placed in
-  `~/dotfiles-local`
-
-You can safely run `rcup` multiple times to update:
-
-    rcup
+    [user]
+      name = your full name
+      email = your git email
 
 Make your own customizations
 ----------------------------

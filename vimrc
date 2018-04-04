@@ -156,6 +156,7 @@ nnoremap <C-l> <C-w>l
 " configure syntastic syntax checking to check on open as well as save
 let g:syntastic_check_on_open=1
 let syntastic_mode_map = { 'passive_filetypes': ['html'] }
+let g:syntastic_ignore_files = ['\.java$']
 
 let g:indent_guides_enable_on_vim_startup = 0
 
@@ -170,6 +171,9 @@ set spellfile=$HOME/.vim-spell-en.utf-8.add
 
 " Always use vertical diffs
 set diffopt+=vertical
+
+" dont show highlights on whitespace
+set nolist
 
 
 " Local config

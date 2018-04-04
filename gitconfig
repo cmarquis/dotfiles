@@ -32,8 +32,8 @@
 [include]
   path = ~/.gitconfig.local
 [user]
-	name = Joe Bellus
-	email = joe@5sigma.io
+	name = Chris Marquis
+	email = chris@quikserve.com
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 

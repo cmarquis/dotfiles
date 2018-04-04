@@ -20,6 +20,7 @@ set tabstop=2
 set shiftwidth=2
 set shiftround
 set expandtab
+set statusline+=%F\ %l\:%c
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
@@ -70,6 +71,9 @@ augroup vimrcEx
   autocmd FileType python set foldnestmax=2
   au FileType python set sw=4 sts=4 et
   au FileType coffee set sw=4 sts=4 et
+
+  " eslint auto format
+  autocmd BufWritePost *.js AsyncRun -post=checktime ./node_modules/.bin/eslint --fix %
 
 augroup END
 
@@ -153,17 +157,17 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
-" configure syntastic syntax checking to check on open as well as save
-let g:syntastic_check_on_open=1
-let syntastic_mode_map = { 'passive_filetypes': ['html'] }
-let g:syntastic_ignore_files = ['\.java$']
+" ale config
+let g:ale_sign_error = '●' " Less aggressive than the default '>>'
+let g:ale_sign_warning = '.'
+let g:ale_lint_on_enter = 0 " Less distracting when opening a new file
+let g:ale_sign_column_always = 1
+" Enable completion where available.
+let g:ale_completion_enabled = 1
 
-let g:indent_guides_enable_on_vim_startup = 0
-
-" let g:vim_jsx_pretty_enable_jsx_highlight = 1
-" let g:vim_jsx_pretty_colorful_config = 1
-let g:jsx_ext_required = 0
-
+" Set this. Airline will handle the rest.
+let g:airline#extensions#ale#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
 
 " Set spellfile to location that is guaranteed to exist, can be symlinked to
 " Dropbox or kept in Git and managed outside of thoughtbot/dotfiles using rcm.
@@ -181,3 +185,28 @@ if filereadable($HOME . "/.vimrc.local")
   source ~/.vimrc.local
 endif
 
+let g:indent_guides_enable_on_vim_startup = 0
+
+" Vim-Go config
+map <C-n> :cnext<CR>
+map <C-m> :cprevious<CR>
+nnoremap <leader>a :cclose<CR>
+
+autocmd FileType go nmap <leader>b <Plug>(go-build)
+autocmd FileType go nmap <leader>r <Plug>(go-run)
+autocmd FileType go nmap <leader>t <Plug>(go-test)
+autocmd FileType go nmap <leader>i <Plug>(go-install)
+
+let g:go_fmt_command = "goimports"
+let g:go_list_type = "quickfix"
+let g:go_highlight_types = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_operators = 1
+
+" vim-jsx config
+
+let g:jsx_ext_required = 0
+
+set nolist

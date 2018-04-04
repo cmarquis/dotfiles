@@ -6,3 +6,10 @@ if [ ! -e $HOME/.vim/bundle/Vundle.vim ]; then
   git clone https://github.com/gmarik/Vundle.vim.git $HOME/.vim/bundle/Vundle.vim
 fi
 vim -u $HOME/.vimrc.bundles +PluginInstall +PluginClean! +qa
+
+if [ ! -e $HOME/.config/nvim/init.vim ]; then
+  if [ ! -e $HOME/.config/nvim ]; then
+    mkdir -p $HOME/.config/nvim
+  fi
+  ln -s $HOME/dotfiles/vimrc $HOME/.config/nvim/init.vim
+fi

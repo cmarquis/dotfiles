@@ -11,7 +11,7 @@ alias -g M='| less'
 alias -g L='| wc -l'
 alias -g ONE="| awk '{ print \$1}'"
 alias e="$EDITOR"
-alias v="vim"
+alias v="nvim"
 
 alias phx="mix phoenix.server"
 alias mixsh "iex -S mix"
@@ -26,8 +26,8 @@ alias b="bundle"
 alias t="ruby -I test"
 
 # Rails
-alias migrate="rake db:migrate db:rollback && rake db:migrate"
-alias m="migrate"
+# alias migrate="rake db:migrate db:rollback && rake db:migrate"
+# alias m="migrate"
 alias rk="rake"
 alias s="rspec"
 

@@ -7,6 +7,10 @@ Set zsh as your login shell:
 
     chsh -s $(which zsh)
 
+Install neovim:
+    
+    brew install neovim
+
 Install
 -------
 

@@ -163,7 +163,9 @@ let g:ale_sign_warning = '.'
 let g:ale_lint_on_enter = 0 " Less distracting when opening a new file
 let g:ale_sign_column_always = 1
 " Enable completion where available.
-let g:ale_completion_enabled = 1
+let g:ale_completion_enabled = 0
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 " Set this. Airline will handle the rest.
 let g:airline#extensions#ale#enabled = 1

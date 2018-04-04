@@ -31,9 +31,6 @@
   prune = true
 [include]
   path = ~/.gitconfig.local
-[user]
-	name = Chris Marquis
-	email = chris@quikserve.com
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 

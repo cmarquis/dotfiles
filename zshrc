@@ -95,6 +95,7 @@ plugins=(
     docker
     nvm
     git
+    z
 )
 
 source $ZSH/oh-my-zsh.sh

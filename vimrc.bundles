@@ -43,9 +43,12 @@ Plugin 'w0rp/ale'
 Plugin 'skywind3000/asyncrun.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'guns/vim-clojure-static'
-Plugin 'ngmy/vim-rubocop'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
+Plugin 'townk/vim-autoclose'
+Plugin 'alvan/vim-closetag'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
 
 if filereadable(expand("~/.vimrc.bundles.local"))
   source ~/.vimrc.bundles.local

@@ -75,6 +75,8 @@ augroup vimrcEx
   " eslint auto format
   autocmd BufWritePost *.js AsyncRun -post=checktime ./node_modules/.bin/eslint --fix %
 
+  autocmd vimenter * NERDTree
+
 augroup END
 
 
@@ -213,6 +215,8 @@ let g:go_highlight_fields = 1
 let g:go_highlight_functions = 1
 let g:go_highlight_methods = 1
 let g:go_highlight_operators = 1
+
+let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.js,*.jsx'
 
 " vim-jsx config
 

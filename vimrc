@@ -109,22 +109,6 @@ set number
 set numberwidth=5
 set relativenumber
 
-" Tab completion
-" will insert tab at beginning of line,
-" will use completion if not at beginning
-
-set wildmode=list:longest,list:full
-function! InsertTabWrapper()
-    let col = col('.') - 1
-    if !col || getline('.')[col - 1] !~ '\k'
-        return "\<tab>"
-    else
-        return "\<c-p>"
-    endif
-endfunction
-inoremap <S-Tab> <c-r>=InsertTabWrapper()<cr>
-" inoremap <S-Tab> <c-n>
-
 " Index ctags from any project, including those outside Rails
 map <Leader>ct :!ctags -R .<CR>
 
@@ -136,12 +120,6 @@ nnoremap <Left> :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
 nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
-
-" vim-rspec mappings
-nnoremap <Leader>t :call RunCurrentSpecFile()<CR>
-nnoremap <Leader>s :call RunNearestSpec()<CR>
-nnoremap <Leader>l :call RunLastSpec()<CR>
-let g:rspec_command = 'call Send_to_Tmux("rspec {spec}\n")'
 
 " Run commands that require an interactive shell
 nnoremap <Leader>r :RunInInteractiveShell<space>
@@ -190,7 +168,6 @@ set diffopt+=vertical
 " dont show highlights on whitespace
 set nolist
 
-
 " Local config
 if filereadable($HOME . "/.vimrc.local")
   source ~/.vimrc.local
@@ -223,3 +200,4 @@ let g:closetag_filenames = '*.html,*.xhtml,*.phtml,*.js,*.jsx'
 let g:jsx_ext_required = 0
 
 set nolist
+

@@ -1,0 +1,92 @@
+snippet cmp  A standard react component
+
+	/*
+		Class Name
+		Class Description
+	*/
+
+	class ${1:MyClass} extends React.Component {
+
+		constructor() {
+			super();
+			this.state = {};
+		}
+
+		render() {
+			return (
+				<div></div>
+			);
+		}
+
+	}
+
+	$1.PropTypes = {
+
+	};
+
+
+
+snippet cmp A redux connected React component 
+
+	/*
+		Class Name
+		Class Description
+	*/
+
+	class ${1:MyClass} extends React.Component {
+
+		constructor() {
+			super();
+			this.state = {};
+		}
+
+		render() {
+			return (
+				<div></div>
+			);
+		}
+
+	}
+
+	$1.PropTypes = {
+
+	};
+
+	const mapState = (store) => ({
+	});
+
+	const mapProps = {
+
+	};
+
+	export default connect(mapState, mapProps)($1);
+
+
+snippet cmp Functional React component
+	// $1 - ${2:Component Description}
+	const ${1:MyComponent} = (props) => (
+		<div>
+			${0}
+		</div>
+	);
+
+	$1.PropTypes = {
+
+	};
+
+
+snippet reducer - Redux reducer boilerplate
+
+	const initialState = {};
+
+	export function (state = initialState, action)	 {
+		switch(action.type) {
+			case ${1:ActionName}:
+				return {
+					${2:action.data}
+					...state,	
+				};
+			default:
+				return state;
+		}
+	}

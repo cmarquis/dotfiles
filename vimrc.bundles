@@ -48,7 +48,6 @@ Plugin 'alvan/vim-closetag'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'garbas/vim-snipmate'
-Plugin 'honza/vim-snippets'
 Plugin 'ervandew/supertab'
 
 if filereadable(expand("~/.vimrc.bundles.local"))

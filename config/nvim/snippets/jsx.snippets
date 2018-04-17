@@ -1,11 +1,15 @@
 snippet cmp  A standard react component
 
 	/*
-		Class Name
+		$1
 		Class Description
+
+		Usage:
+
+		<$1 />
 	*/
 
-	class ${1:MyClass} extends React.Component {
+	export default class ${1:MyClass} extends React.Component {
 
 		constructor() {
 			super();
@@ -29,8 +33,11 @@ snippet cmp  A standard react component
 snippet cmp A redux connected React component 
 
 	/*
-		Class Name
+		$1
 		Class Description
+
+		Usage: 
+			<$1 />
 	*/
 
 	class ${1:MyClass} extends React.Component {
@@ -76,6 +83,10 @@ snippet cmp Functional React component
 
 
 snippet reducer - Redux reducer boilerplate
+	/**
+	 * ${3:Reducer description}
+	 */
+
 
 	const initialState = {};
 
@@ -90,3 +101,9 @@ snippet reducer - Redux reducer boilerplate
 				return state;
 		}
 	}
+
+snippet dprops Deconstruct props
+	const { ${1} } = this.props;
+
+
+

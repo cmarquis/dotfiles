@@ -1,0 +1,58 @@
+snippet dcon Deconstruct object
+	const { ${1} } = ${2};
+	${0}
+snippet class Basic class skeleton
+	/*
+		$1
+
+		Class Description
+
+		Usage:
+	*/
+
+	class ${1:ClassName} {
+
+		${0}
+
+	}
+snippet classx Class skeleton with extension
+	/*
+		$1 ($2)
+
+		Class Description
+
+		Usage:
+	*/
+
+	class ${1:ClassName} extends ${2:ParentComponent} {
+
+		${0}
+
+	}
+snippet constructor Class constructor function
+	constructor() {
+		super();
+		${0}
+	}
+snippet cfn Class level function declaration
+	/**
+	 * $1 - Function description
+	 * @param {type}  name  - description
+	 * @returns {type} - description
+	 */
+	${1:function_name} (${2:params}) {
+		${0}	
+	}
+snippet fn Function declaration
+	/**
+	 * $1 - Function description
+	 * @param {type}  name  - description
+	 * @returns {type} - description
+	 */
+	function ${1:function_name} (${2:params}) {
+		${0}	
+	}
+snippet confn Constant function declaration
+	const ${1:function_name} = (${2:params}) => {
+		${0}	
+	};

@@ -1,5 +1,8 @@
 snippet cmp  A standard react component
 
+	import React from 'react';
+	import PropTypes from 'prop-types'
+
 	/*
 		$1
 		Class Description
@@ -30,7 +33,11 @@ snippet cmp  A standard react component
 
 
 
+
 snippet cmp A redux connected React component 
+
+	import React from 'react';
+	import PropTypes from 'prop-types'
 
 	/*
 		$1
@@ -105,5 +112,27 @@ snippet reducer - Redux reducer boilerplate
 snippet dprops Deconstruct props
 	const { ${1} } = this.props;
 
+snippet cmptest Component test boilerplate
 
+	import React from 'react';
+	import { shallow } from 'enzyme';
+	import ${1:MyComponent} from '${2:ComponentPath}';
+
+
+	const props = {
+		${0}
+	};
+
+	const component = shallow(
+		<$1 { ...props } />
+	);
+
+
+	describe('<$1 />', () => {
+		it('renders <$1>', () => {
+			expect(
+				component.find('$1').node
+			).toBeDefined();
+		});
+	});
 

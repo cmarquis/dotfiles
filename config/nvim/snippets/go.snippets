@@ -1,0 +1,66 @@
+snippet forr Simple for loop over a range
+	for ${1:idx}, ${2:val} := range ${3:array} {
+		${0}
+	}
+
+snippet ife Check if err is nil
+	if err != nil {
+		${0}
+	}
+
+snippet ifcall Call a method and check if return error is nil
+	if err := ${1:DoSomeThing}(${2:}); err != nil {
+		${0}
+	}
+
+snippet tjson
+	${1:Property} ${2:type} \`json:"${3:}" bson:"$3"\` 
+	${0}
+
+snippet fexists Check if a file exists
+	filename := 
+	if _, err := os.Stat(filename); os.IsNotExist(err) {
+		${0}
+	} 
+
+snippet rseed Seed the random number engine with the time
+	rand.Seed(time.Now().UnixNano())
+	${0}
+
+snippet rint Generate a random integer
+	${1:r} := rand.Intn(${2:max}-${3:min}) + $3
+	${0}
+
+snippet debugvar Print debug information for a variable
+	fmt.Printf("Variable: ${1:MyVariable}")
+	fmt.Printf("\t Value:\t%s\n", $1)
+	fmt.Printf("\t Type:\t%s\n", reflect.TypeOf($1).String())
+
+snippet readcloser2string Convert an io.ReadCloser to a string
+	${1:buf} := new(bytes.Buffer)
+	$1.ReadFrom(${2:Closer})
+	${3:newString} := $1.String()
+	${0}
+
+snippet func A public function 
+	// $1 - ${4:Undescribed}
+	func ${1:FunctionName} (${2:}) ${3:} {
+		${0}
+	}
+
+snippet pfunc A private function 
+	func ${1:functionName} (${2:}) ${3:} {
+		${0}
+	}
+
+snippet cfunc A structure function
+	// ${1:FunctionName} - ${2:Not implemented}
+	func (${3:instance} *${4:Struct}) $1(${5:}) ${6:} {
+		${0}
+	}
+
+snippet struct A structure definition
+	// ${1:StructureName} - ${2:Description}
+	type $2 struct {
+		${0}
+	} 
